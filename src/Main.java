@@ -9,7 +9,7 @@ class ClassNotFound extends Exception
 {
     public ClassNotFound() {}
 }
-class Scratch {
+class Main {
 
     /** @noinspection OptionalGetWithoutIsPresent*/
     public static Class<?> findCallingClass() {
@@ -114,7 +114,7 @@ class Scratch {
                 if (rawGuess.length() == 0) {
                     frameMain.setVisible(false);
                     ErrorFrame.error = "Error Invalid Value For Guess";
-                    Scratch.callingclass = Scratch.findCallingClass();
+                    Main.callingclass = Main.findCallingClass();
                     SwingUtilities.invokeLater(new ErrorHandler());
                     return;
                 }
@@ -243,7 +243,7 @@ class WordFrame extends JFrame{
                 word = wordField.getText();
                 if (Objects.equals(word, "")) {
                     ErrorFrame.error = "No Word Entered.";
-                    Scratch.callingclass = Scratch.findCallingClass();
+                    Main.callingclass = Main.findCallingClass();
                     SwingUtilities.invokeLater(new ErrorHandler());
                     frameWord.dispatchEvent(new WindowEvent(frameWord, WindowEvent.WINDOW_CLOSING));
                     return;
@@ -254,7 +254,7 @@ class WordFrame extends JFrame{
                 wordArray = wordLowerCase.split("");
 
                 arrayWord = new ArrayList<>(Arrays.asList(wordArray));
-                Scratch classinstance = new Scratch();
+                Main classinstance = new Main();
                 classinstance.GuessFrame();
             }
         }
@@ -316,10 +316,10 @@ class ErrorFrame {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == confirm) {
                 frameError.dispatchEvent(new WindowEvent(frameError, WindowEvent.WINDOW_CLOSING));
-                if (Scratch.callingclass.equals(Scratch.action.class)){
-                    Scratch.frameMain.setVisible(true);
+                if (Main.callingclass.equals(Main.action.class)){
+                    Main.frameMain.setVisible(true);
                 }
-                else if (Scratch.callingclass.equals(WordFrame.action.class)) {
+                else if (Main.callingclass.equals(WordFrame.action.class)) {
                     WordFrame classinstance = new WordFrame();
                     App.gui = classinstance.wordFrame();
                     App.gui.setVisible(true);
@@ -359,9 +359,9 @@ class App implements Runnable {
     public void run() {
         //debug option
         start_mainFrame_First = false;
-        Scratch.callingclass = Scratch.findCallingClass();
+        Main.callingclass = Main.findCallingClass();
         if (start_mainFrame_First) {
-            Scratch classinstance = new Scratch();
+            Main classinstance = new Main();
             gui = classinstance.GuessFrame();
         }
         else {
@@ -370,8 +370,8 @@ class App implements Runnable {
         }
         gui.setVisible(true);
         if (class_is_mainframe){
-            System.out.println(Scratch.callingclass);
-            Scratch.frameMain.dispose();
+            System.out.println(Main.callingclass);
+            Main.frameMain.dispose();
         }
 
 

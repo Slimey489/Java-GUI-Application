@@ -9,9 +9,9 @@ class App implements Runnable {
     public void run() {
         //debug option
         start_mainFrame_First = false;
-        Scratch.callingclass = Scratch.findCallingClass();
+        Main.callingclass = Main.findCallingClass();
         if (start_mainFrame_First) {
-            Scratch classinstance = new Scratch();
+            Main classinstance = new Main();
             gui = classinstance.GuessFrame();
         }
         else {
@@ -20,8 +20,8 @@ class App implements Runnable {
         }
         gui.setVisible(true);
         if (class_is_mainframe){
-            System.out.println(Scratch.callingclass);
-            Scratch.frameMain.dispose();
+            System.out.println(Main.callingclass);
+            Main.frameMain.dispose();
         }
 
 

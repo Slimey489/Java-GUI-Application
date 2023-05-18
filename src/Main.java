@@ -44,6 +44,7 @@ class Main {
     static final String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
             "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     static int letter_At_Index,letters_On_Row, column,row,total_Letters_Added;
+    boolean removedConstraints = false;
     ArrayList<String> underscoreWord;
 
 
@@ -83,12 +84,8 @@ class Main {
         layout.putConstraint(SpringLayout.WEST, guessField, 80, SpringLayout.WEST, enterGuessLabel);
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
-        if (guessLabel == null){
         layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
-        }
-        else {
-            layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
-        }
+
 
 
         frameMain.add(enterGuessLabel);
@@ -122,10 +119,17 @@ class Main {
                 else {
                     guess = rawGuess.toLowerCase();
                 }
+
                 char1 = guess.charAt(0);
                 char2 = Character.toString(char1);
                 System.out.print(char2);
                 if (total_Letters_Added != 26){frameMain.add(place_Label());}
+                if (!removedConstraints){
+                    layout.removeLayoutComponent(backButton);
+                    layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
+                    layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
+                    removedConstraints=true;
+                }
                 guessField.setText("");
                 frameMain.revalidate();
             }

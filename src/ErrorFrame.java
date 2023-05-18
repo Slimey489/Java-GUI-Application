@@ -15,6 +15,7 @@ class ErrorFrame {
     public JFrame errorFrame(){
         //error = "Please enter a valid value";
         frameError = new JFrame();
+        frameError.setTitle("Error");
         confirm = new JButton("Confirm");
         contentpane2 = frameError.getContentPane();
         confirm.addActionListener(new action());

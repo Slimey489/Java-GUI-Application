@@ -66,6 +66,7 @@ class Main {
     public JFrame GuessFrame(){
 
         frameMain = new JFrame();
+        frameMain.setTitle("Hangman");
         contentpane = frameMain.getContentPane();
         layout = new SpringLayout();
 

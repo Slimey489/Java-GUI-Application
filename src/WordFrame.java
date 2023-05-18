@@ -22,6 +22,7 @@ class WordFrame extends JFrame {
     public JFrame wordFrame() {
 
         frameWord = new JFrame();
+        frameWord.setTitle("Hangman");
         enterWord = new JButton("Enter");
         contentpane2 = frameWord.getContentPane();
         enterWord.addActionListener(new action());

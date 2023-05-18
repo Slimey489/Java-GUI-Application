@@ -45,10 +45,10 @@ class ErrorFrame {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == confirm) {
                 frameError.dispatchEvent(new WindowEvent(frameError, WindowEvent.WINDOW_CLOSING));
-                if (Scratch.callingclass.equals(Scratch.action.class)){
-                    Scratch.frameMain.setVisible(true);
+                if (Main.callingclass.equals(Main.action.class)){
+                    Main.frameMain.setVisible(true);
                 }
-                else if (Scratch.callingclass.equals(WordFrame.action.class)) {
+                else if (Main.callingclass.equals(WordFrame.action.class)) {
                     WordFrame classinstance = new WordFrame();
                     App.gui = classinstance.wordFrame();
                     App.gui.setVisible(true);

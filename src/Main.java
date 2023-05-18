@@ -155,7 +155,7 @@ class Main {
                     /*
                     frameMain.setVisible(false);
                     ErrorFrame.error = "Error Invalid Value For Guess";
-                    Scratch.callingclass = Scratch.findCallingClass();
+                    Main.callingclass = Main.findCallingClass();
                     SwingUtilities.invokeLater(new ErrorHandler());
 
                      */
@@ -191,5 +191,4 @@ class Main {
         SwingUtilities.invokeLater(new App());
 
     }
-    //f.add(button);
 }

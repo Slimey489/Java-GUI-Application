@@ -57,7 +57,7 @@ class WordFrame extends JFrame {
                 word = wordField.getText();
                 if (Objects.equals(word, "")) {
                     ErrorFrame.error = "No Word Entered.";
-                    Scratch.callingclass = Scratch.findCallingClass();
+                    Main.callingclass = Main.findCallingClass();
                     SwingUtilities.invokeLater(new ErrorHandler());
                     frameWord.dispatchEvent(new WindowEvent(frameWord, WindowEvent.WINDOW_CLOSING));
                     return;
@@ -68,7 +68,7 @@ class WordFrame extends JFrame {
                 wordArray = wordLowerCase.split("");
 
                 arrayWord = new ArrayList<>(Arrays.asList(wordArray));
-                Scratch classinstance = new Scratch();
+                Main classinstance = new Main();
                 classinstance.GuessFrame();
             }
         }

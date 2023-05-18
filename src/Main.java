@@ -8,7 +8,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Optional;
 
-class Scratch {
+class Main {
 
     /** @noinspection OptionalGetWithoutIsPresent*/
     public static Class<?> findCallingClass() {
@@ -20,9 +20,7 @@ class Scratch {
 
 
     }
-    /*What is T ?
-      T is a Type variable it replaces instances of an object
-    */
+
     public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list) {
         ArrayList<T> duplicateRemover = new ArrayList<>();
         for (T element : list) {
@@ -47,7 +45,6 @@ class Scratch {
             "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     static int letter_At_Index,letters_On_Row, column,row,total_Letters_Added;
     ArrayList<String> underscoreWord;
-    //static File frameIsOpen;
 
 
 
@@ -72,7 +69,6 @@ class Scratch {
         contentpane = frameMain.getContentPane();
         layout = new SpringLayout();
 
-        //JButton button = new JButton("Enter");
 
         guessField = new JTextField(1);
         backButton = new JButton("New Word");
@@ -86,9 +82,12 @@ class Scratch {
         layout.putConstraint(SpringLayout.WEST, guessField, 80, SpringLayout.WEST, enterGuessLabel);
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
-        /*  The line below was causing the NPE. Not sure when/where guessLabel
-         is supposed to be defined. Using enterGuessLabel for now instead. */
-        layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, enterGuessLabel);
+        if (guessLabel == null){
+        layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
+        }
+        else {
+            layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
+        }
 
 
         frameMain.add(enterGuessLabel);
@@ -115,7 +114,7 @@ class Scratch {
                 if (rawGuess.length() == 0) {
                     frameMain.setVisible(false);
                     ErrorFrame.error = "Error Invalid Value For Guess";
-                    Scratch.callingclass = Scratch.findCallingClass();
+                    Main.callingclass = Main.findCallingClass();
                     SwingUtilities.invokeLater(new ErrorHandler());
                     return;
                 }
@@ -123,7 +122,7 @@ class Scratch {
                     guess = rawGuess.toLowerCase();
                 }
                 char1 = guess.charAt(0);
-                String char2 = Character.toString(char1);
+                char2 = Character.toString(char1);
                 System.out.print(char2);
                 if (total_Letters_Added != 26){frameMain.add(place_Label());}
                 guessField.setText("");
@@ -144,7 +143,6 @@ class Scratch {
         int letters_Per_Row = rowCalc();
         String char_Caps;
         for(letter_At_Index = 0; letter_At_Index < alphabet.length; letter_At_Index++) {
-            // i--;
             char_Caps = char2.toUpperCase();
 
             if (char_Caps.equals(alphabet[letter_At_Index])) {

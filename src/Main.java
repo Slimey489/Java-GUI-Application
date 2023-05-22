@@ -153,7 +153,7 @@ class Main {
 
         }
     }
-    static JLabel place_Label(){
+    JLabel place_Label(){
         int letters_Per_Row = rowCalc();
         String char_Caps;
         for(letter_At_Index = 0; letter_At_Index < alphabet.length; letter_At_Index++) {

@@ -33,17 +33,17 @@ class Main {
 
     public static JFrame frameMain;
     static Class<?> callingclass;
-    static Container contentpane;
-    static SpringLayout layout;
+    Container contentpane;
+    SpringLayout layout;
     JTextField guessField;
     JLabel enterGuessLabel;
-    static JLabel guessLabel;
+    JLabel guessLabel;
     JButton backButton;
     String rawGuess, guess;
-    static String char2,letter;
+    String char2,letter;
     static final String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
             "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
-    static int letter_At_Index,letters_On_Row, column,row,total_Letters_Added;
+    int letter_At_Index,letters_On_Row, column,row,total_Letters_Added;
     boolean removedConstraints = false;
     ArrayList<String> underscoreWord;
 

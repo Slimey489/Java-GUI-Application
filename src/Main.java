@@ -162,18 +162,6 @@ class Main {
             char_Caps = char2.toUpperCase();
 
             if (char_Caps.equals(alphabet[letter_At_Index])) {
-             /*   if (placed_Letters.stream().findAny().isPresent()){
-                    /*
-                    frameMain.setVisible(false);
-                    ErrorFrame.error = "Error Invalid Value For Guess";
-                    Main.callingclass = Main.findCallingClass();
-                    SwingUtilities.invokeLater(new ErrorHandler());
-
-                     */
-                //     return null;
-                // }
-
-
                 if (letters_On_Row == letters_Per_Row) {
                     row++;
                     letters_On_Row = 0;

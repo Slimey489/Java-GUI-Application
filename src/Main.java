@@ -181,7 +181,6 @@ class Main {
                 }
                 letter = alphabet[letter_At_Index];
                 guessLabel = new JLabel(letter);
-                System.out.println(column * 20 + 20);
                 layout.putConstraint(SpringLayout.WEST, guessLabel, (column * 20 + 20), SpringLayout.WEST, contentpane);
                 layout.putConstraint(SpringLayout.NORTH, guessLabel, (row * 20 + 70), SpringLayout.NORTH, contentpane);
                 if (column == letters_Per_Row) {

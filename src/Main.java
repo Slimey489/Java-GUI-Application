@@ -77,6 +77,7 @@ class Main {
         guessField.addActionListener(new action());
         backButton.addActionListener(new action());
         enterGuessLabel = new JLabel("Enter Guess:");
+        DrawingFrame.drawingFrame();
 
 
         layout.putConstraint(SpringLayout.WEST, enterGuessLabel, 10, SpringLayout.WEST, contentpane);
@@ -85,16 +86,17 @@ class Main {
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
         layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
+        layout.putConstraint(SpringLayout.WEST,DrawingFrame.drawingFrame,200,SpringLayout.WEST,contentpane);
 
 
-
-        frameMain.add(enterGuessLabel);
-        frameMain.add(backButton);
-        frameMain.add(guessField);
+        contentpane.add(DrawingFrame.drawingFrame);
+        contentpane.add(enterGuessLabel);
+        contentpane.add(backButton);
+        contentpane.add(guessField);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setSize(500, 400);
+        contentpane.setSize(500,400);
         frameMain.setLayout(layout);
-
         contentpane.setVisible(true);
         frameMain.setVisible(true);
 

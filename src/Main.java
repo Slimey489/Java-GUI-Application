@@ -123,13 +123,22 @@ class Main {
                 char1 = guess.charAt(0);
                 char2 = Character.toString(char1);
                 System.out.print(char2);
-                if (total_Letters_Added != 26){frameMain.add(place_Label());}
+
+                DrawingFrame.guessNumber++;
                 if (!removedConstraints){
+                    DrawingFrame.guessNumber = 0;
+                    row = 0;
+                    column = 0;
+                    letters_On_Row = 0;
+                    total_Letters_Added = 0;
                     layout.removeLayoutComponent(backButton);
                     layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
                     layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
                     removedConstraints=true;
                 }
+                if (total_Letters_Added != 26){contentpane.add(place_Label());}
+
+                layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
                 guessField.setText("");
                 frameMain.revalidate();
             }

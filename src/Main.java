@@ -386,34 +386,3 @@ class ErrorHandler implements Runnable{
 
     }
 }
-// to rewrite vvv
-/*
-        guess.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                if (txtGuess.getText().length() >= 3 ) // limit to 3 characters
-                    e.consume();
-            }
-        });
-        */
-        /*
-        String word = "";
-        ArrayList<String> encoded = new ArrayList<>();
-        for (int x = 0; x < word.length(); x++) {
-            encoded.add("_ ");
-        }
-        ArrayList<String> findspaces = new ArrayList<>();
-        ArrayList<Integer> indexes = new ArrayList<>();
-        DONE String wordlower = word.toLowerCase(Locale.ROOT);
-        DONE String[] wordsplt = wordlower.split("");
-        DONE ArrayList<String> arrword = new ArrayList<>(Arrays.asList(wordsplt));
-        String[] space = {" "};
-        if (Arrays.stream(space).findAny().isPresent()) {
-            ListIterator<String> iterator1 = arrword.listIterator(0);
-            while (iterator1.hasNext()) { // changes the position +1 of the iterator if there is a valid value for it to change to
-                if (Arrays.asList(space).contains(iterator1.next())) {
-                    indexes.add(iterator1.previousIndex());
-                }
-            }
-        }
-        */

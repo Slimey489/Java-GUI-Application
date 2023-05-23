@@ -117,8 +117,8 @@ class HangmanDrawing {
                     g2.draw(new Line2D.Double(192, 20, 194, 26));
                     g2.draw(new Line2D.Double(190, 20, 192, 26));
                     g2.draw(new Ellipse2D.Double(180, 50, 20, 20));
-                    g2.draw(new Line2D.Double(190, 85, 160, 85));
-                    g2.draw(new Line2D.Double(190, 85, 220, 85));
+                    g2.draw(new Line2D.Double(190, 70, 190, 110));
+
 
                 }
 
@@ -137,8 +137,11 @@ class HangmanDrawing {
                     g2.draw(new Line2D.Double(192, 20, 194, 26));
                     g2.draw(new Line2D.Double(190, 20, 192, 26));
                     g2.draw(new Ellipse2D.Double(180, 50, 20, 20));
-                    g2.draw(new Line2D.Double(190, 85, 160, 85));
                     g2.draw(new Line2D.Double(190, 70, 190, 110));
+                    g2.draw(new Line2D.Double(190, 85, 160, 85));
+                    g2.draw(new Line2D.Double(190, 85, 220, 85));
+
+
                 }
 
                 //Left Leg
@@ -157,6 +160,7 @@ class HangmanDrawing {
                     g2.draw(new Line2D.Double(190, 20, 192, 26));
                     g2.draw(new Ellipse2D.Double(180, 50, 20, 20));
                     g2.draw(new Line2D.Double(190, 85, 160, 85));
+                    g2.draw(new Line2D.Double(190, 85, 220, 85));
                     g2.draw(new Line2D.Double(190, 70, 190, 110));
                     g2.draw(new Line2D.Double(190, 110, 180, 135));
                 }
@@ -177,6 +181,7 @@ class HangmanDrawing {
                     g2.draw(new Line2D.Double(190, 20, 192, 26));
                     g2.draw(new Ellipse2D.Double(180, 50, 20, 20));
                     g2.draw(new Line2D.Double(190, 85, 160, 85));
+                    g2.draw(new Line2D.Double(190, 85, 220, 85));
                     g2.draw(new Line2D.Double(190, 70, 190, 110));
                     g2.draw(new Line2D.Double(190, 110, 180, 135));
                     g2.draw(new Line2D.Double(190, 110, 200, 135));

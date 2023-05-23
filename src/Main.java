@@ -36,7 +36,6 @@ class Main {
     private Container contentpane;
     private SpringLayout layout;
     private JTextField guessField;
-    private JLabel enterGuessLabel;
     JLabel guessLabel;
     JButton backButton;
     String rawGuess, guess;
@@ -69,20 +68,20 @@ class Main {
     }
     /** @noinspection UnusedReturnValue*/
     public JFrame GuessFrame(){
-
         frameMain = new JFrame();
         frameMain.setTitle("Hangman");
         contentpane = frameMain.getContentPane();
         layout = new SpringLayout();
-
-
+        underscoreWord = new ArrayList<String>();
+        underscoreWord.add("_");
+        underscoreWord.add("_");
         guessField = new JTextField(1);
         backButton = new JButton("New Word");
         guessField.addActionListener(new action());
         backButton.addActionListener(new action());
-        enterGuessLabel = new JLabel("Enter Guess:");
+        JLabel enterGuessLabel = new JLabel("Enter Guess:");
         DrawingFrame.drawingFrame();
-
+        JLabel underscores;
 
         layout.putConstraint(SpringLayout.WEST, enterGuessLabel, 10, SpringLayout.WEST, contentpane);
         layout.putConstraint(SpringLayout.NORTH, enterGuessLabel, 20, SpringLayout.NORTH, contentpane);
@@ -90,9 +89,13 @@ class Main {
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
         layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
-        layout.putConstraint(SpringLayout.WEST,DrawingFrame.drawingFrame,235,SpringLayout.WEST,contentpane);
-
-
+        layout.putConstraint(SpringLayout.EAST,DrawingFrame.drawingFrame,0,SpringLayout.EAST,contentpane);
+        /*
+        for (String i : underscoreWord){
+            underscores = new JLabel(i);
+            layout.putConstraint(SpringLayout.WEST);
+        }
+        */
         contentpane.add(DrawingFrame.drawingFrame);
         contentpane.add(enterGuessLabel);
         contentpane.add(backButton);
@@ -132,18 +135,14 @@ class Main {
                 char2 = Character.toString(char1);
                 System.out.print(char2);
                 DrawingFrame.update_drawingFrame();
-                DrawingFrame.guessNumber++;
+
                 if (!removedConstraints){
-                    DrawingFrame.guessNumber = 0;
-                    row = 0;
-                    column = 0;
-                    letters_On_Row = 0;
-                    total_Letters_Added = 0;
                     layout.removeLayoutComponent(backButton);
                     layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
                     layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
                     removedConstraints=true;
                 }
+                DrawingFrame.guessNumber++;
                 if (total_Letters_Added != 26){contentpane.add(place_Label());}
 
                 layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
@@ -151,6 +150,12 @@ class Main {
                 frameMain.revalidate();
             }
             if (e.getSource() == backButton){
+                DrawingFrame.guessNumber = 0;
+                row = 0;
+                column = 0;
+                letters_On_Row = 0;
+                total_Letters_Added = 0;
+                DrawingFrame.update_drawingFrame();
                 App.start_mainFrame_First = false;
                 App.class_is_mainframe = true;
                 SwingUtilities.invokeLater(new App());

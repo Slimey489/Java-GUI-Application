@@ -16,7 +16,7 @@ public class DrawingFrame extends HangmanDrawing {
             if(frameUI!=null){frameUI.setNorthPane(null);}
         }};
         drawingFrame.setContentPane(new Canvas());
-        //drawingFrame.setBackground(Color.lightGray);
+        drawingFrame.setBackground(Color.lightGray);
         drawingFrame.setPreferredSize(new Dimension(250,250));
 
         drawingFrame.setVisible(true);

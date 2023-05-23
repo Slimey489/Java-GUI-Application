@@ -40,8 +40,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                 }
 
                 //Upper Support
@@ -50,20 +50,20 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                 }
-                case 6 -> {
 
-                    //Horizontal Strut
+                //Horizontal Strut
+                case 6 -> {
                     g2.draw(new Line2D.Double(1, 155, 299, 155));
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -75,8 +75,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -91,8 +91,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -108,8 +108,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -118,6 +118,7 @@ class HangmanDrawing {
                     g2.draw(new Line2D.Double(190, 20, 192, 26));
                     g2.draw(new Ellipse2D.Double(180, 50, 20, 20));
                     g2.draw(new Line2D.Double(190, 85, 160, 85));
+                    g2.draw(new Line2D.Double(190, 85, 220, 85));
 
                 }
 
@@ -127,8 +128,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -146,8 +147,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));
@@ -166,8 +167,8 @@ class HangmanDrawing {
                     g2.draw(new Rectangle2D.Double(120, 20, 5, 135));
                     g2.draw(new Line2D.Double(125, 145, 145, 155));
                     g2.draw(new Line2D.Double(125, 140, 154.5, 155));
-                    g2.draw(new Line2D.Double(120, 145, 110, 155));
-                    g2.draw(new Line2D.Double(120, 140, 125, 155));
+                    g2.draw(new Line2D.Double(120, 145, 105, 155));
+                    g2.draw(new Line2D.Double(120, 140, 95.5, 155));
                     g2.draw(new Line2D.Double(125, 32, 132.5, 25));
                     g2.draw(new Line2D.Double(125, 37, 137, 25));
                     g2.draw(new Rectangle2D.Double(125, 20, 70, 5));

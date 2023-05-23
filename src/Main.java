@@ -33,17 +33,21 @@ class Main {
 
     public static JFrame frameMain;
     static Class<?> callingclass;
-    Container contentpane;
-    SpringLayout layout;
-    JTextField guessField;
-    JLabel enterGuessLabel;
+    private Container contentpane;
+    private SpringLayout layout;
+    private JTextField guessField;
+    private JLabel enterGuessLabel;
     JLabel guessLabel;
     JButton backButton;
     String rawGuess, guess;
     String char2,letter;
     static final String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
             "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
-    int letter_At_Index,letters_On_Row, column,row,total_Letters_Added;
+    int letter_At_Index;
+    int letters_On_Row;
+    int column;
+    int row;
+    public static int total_Letters_Added;
     boolean removedConstraints = false;
     ArrayList<String> underscoreWord;
 
@@ -86,7 +90,7 @@ class Main {
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
         layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
-        layout.putConstraint(SpringLayout.WEST,DrawingFrame.drawingFrame,200,SpringLayout.WEST,contentpane);
+        layout.putConstraint(SpringLayout.WEST,DrawingFrame.drawingFrame,235,SpringLayout.WEST,contentpane);
 
 
         contentpane.add(DrawingFrame.drawingFrame);
@@ -94,8 +98,10 @@ class Main {
         contentpane.add(backButton);
         contentpane.add(guessField);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameMain.pack();
         frameMain.setSize(500, 400);
-        contentpane.setSize(500,400);
+        frameMain.setPreferredSize(new Dimension(500,400));
+        contentpane.setPreferredSize(new Dimension(500,400));
         frameMain.setLayout(layout);
         contentpane.setVisible(true);
         frameMain.setVisible(true);
@@ -125,7 +131,7 @@ class Main {
                 char1 = guess.charAt(0);
                 char2 = Character.toString(char1);
                 System.out.print(char2);
-
+                DrawingFrame.update_drawingFrame();
                 DrawingFrame.guessNumber++;
                 if (!removedConstraints){
                     DrawingFrame.guessNumber = 0;

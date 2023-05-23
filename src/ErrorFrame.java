@@ -13,7 +13,7 @@ class ErrorFrame {
     Container contentpane2;
     JLabel labelError;
     public JFrame errorFrame(){
-        //error = "Please enter a valid value";
+
         frameError = new JFrame();
         frameError.setTitle("Error");
         confirm = new JButton("Confirm");

@@ -7,7 +7,6 @@ class App implements Runnable {
     static boolean class_is_mainframe;
 
     public void run() {
-        //debug option
         start_mainFrame_First = false;
         Main.callingclass = Main.findCallingClass();
         if (start_mainFrame_First) {

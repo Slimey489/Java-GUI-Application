@@ -23,7 +23,7 @@ public class DrawingFrame extends HangmanDrawing {
         drawingFrame.setVisible(true);
     }
 
-    public static void update_drawingFrame(){
+    public static void updateDrawingFrame(){
         drawingFrame.getContentPane().repaint();
         Main.frameMain.revalidate();
     }

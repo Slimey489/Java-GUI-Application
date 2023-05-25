@@ -134,7 +134,7 @@ class Main {
                 char1 = guess.charAt(0);
                 char2 = Character.toString(char1);
                 System.out.print(char2);
-                DrawingFrame.update_drawingFrame();
+                DrawingFrame.updateDrawingFrame();
 
                 if (!removedConstraints){
                     layout.removeLayoutComponent(backButton);
@@ -143,7 +143,7 @@ class Main {
                     removedConstraints=true;
                 }
                 DrawingFrame.guessNumber++;
-                if (totalLettersAdded != 26){contentpane.add(place_Label());}
+                if (totalLettersAdded != 26){contentpane.add(placeLabel());}
 
                 layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
                 guessField.setText("");
@@ -155,7 +155,7 @@ class Main {
                 column = 0;
                 lettersOnRow = 0;
                 totalLettersAdded = 0;
-                DrawingFrame.update_drawingFrame();
+                DrawingFrame.updateDrawingFrame();
                 App.startMainFrameFirst = false;
                 App.classIsMainframe = true;
                 SwingUtilities.invokeLater(new App());
@@ -166,7 +166,7 @@ class Main {
 
         }
     }
-    JLabel place_Label(){
+    JLabel placeLabel(){
         int lettersPerRow = rowCalc();
         String char_Caps;
         for(letterAtIndex = 0; letterAtIndex < ALPHABET.length; letterAtIndex++) {

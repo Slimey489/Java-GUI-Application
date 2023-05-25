@@ -16,9 +16,7 @@ class HangmanDrawing {
                 }
 
                 //Ground
-                case 1 -> {
-                    g2.draw(new Line2D.Double(1, 155, 299, 155));
-                }
+                case 1 -> g2.draw(new Line2D.Double(1, 155, 299, 155));
 
                 //Vertical Strut
                 case 2 -> {

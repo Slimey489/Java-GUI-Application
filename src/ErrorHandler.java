@@ -1,7 +1,7 @@
 class ErrorHandler implements Runnable{
     public void run() {
-        ErrorFrame classinstance = new ErrorFrame();
-        App.gui = classinstance.errorFrame();
+        ErrorFrame classInstance = new ErrorFrame();
+        App.gui = classInstance.errorFrame();
         App.gui.setVisible(true);
 
     }

@@ -1,8 +1,9 @@
 import javax.swing.*;
+import java.awt.*;
 import javax.swing.plaf.InternalFrameUI;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-import java.awt.*;
+
 
 public class DrawingFrame extends HangmanDrawing {
     static int guessNumber;

@@ -38,15 +38,16 @@ class Main {
     private JTextField guessField;
     JLabel guessLabel;
     JButton backButton;
-    String rawGuess, guess;
+    String rawGuess;
+    static String guess;
     String char2,letter;
-    static final String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
+    static final String[] ALPHABET = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
             "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
-    int letter_At_Index;
-    int letters_On_Row;
+    int letterAtIndex;
+    int lettersOnRow;
     int column;
     int row;
-    public static int total_Letters_Added;
+    public static int totalLettersAdded;
     boolean removedConstraints = false;
     ArrayList<String> underscoreWord;
 
@@ -58,10 +59,10 @@ class Main {
 
         int leastRows = 7;
 
-        double unRoundedletterPerRow;
-        unRoundedletterPerRow = (((double) 26 / leastRows)-1);
+        double unroundedLetterPerRow;
+        unroundedLetterPerRow = (((double) 26 / leastRows)-1);
         MathContext rounded = new MathContext(1, RoundingMode.UP);
-        BigDecimal returnCorrectType = new BigDecimal(unRoundedletterPerRow,rounded);
+        BigDecimal returnCorrectType = new BigDecimal(unroundedLetterPerRow,rounded);
 
         return returnCorrectType.intValue();
 
@@ -72,7 +73,7 @@ class Main {
         frameMain.setTitle("Hangman");
         contentpane = frameMain.getContentPane();
         layout = new SpringLayout();
-        underscoreWord = new ArrayList<String>();
+        underscoreWord = new ArrayList<>();
         underscoreWord.add("_");
         underscoreWord.add("_");
         guessField = new JTextField(1);
@@ -87,15 +88,14 @@ class Main {
         layout.putConstraint(SpringLayout.NORTH, enterGuessLabel, 20, SpringLayout.NORTH, contentpane);
         layout.putConstraint(SpringLayout.WEST, guessField, 80, SpringLayout.WEST, enterGuessLabel);
         layout.putConstraint(SpringLayout.NORTH, guessField, 20, SpringLayout.NORTH, contentpane);
+        layout.putConstraint(SpringLayout.EAST,DrawingFrame.drawingFrame,0,SpringLayout.EAST,contentpane);
+        /*for (String i : underscoreWord){
+            underscores = new JLabel();
+            layout.putConstraint(SpringLayout.WEST);
+        }*/
         layout.putConstraint(SpringLayout.WEST, backButton, 20, SpringLayout.WEST, contentpane);
         layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessField);
-        layout.putConstraint(SpringLayout.EAST,DrawingFrame.drawingFrame,0,SpringLayout.EAST,contentpane);
-        /*
-        for (String i : underscoreWord){
-            underscores = new JLabel(i);
-            layout.putConstraint(SpringLayout.WEST);
-        }
-        */
+
         contentpane.add(DrawingFrame.drawingFrame);
         contentpane.add(enterGuessLabel);
         contentpane.add(backButton);
@@ -143,7 +143,7 @@ class Main {
                     removedConstraints=true;
                 }
                 DrawingFrame.guessNumber++;
-                if (total_Letters_Added != 26){contentpane.add(place_Label());}
+                if (totalLettersAdded != 26){contentpane.add(place_Label());}
 
                 layout.putConstraint(SpringLayout.NORTH, backButton, 20, SpringLayout.NORTH, guessLabel);
                 guessField.setText("");
@@ -153,11 +153,11 @@ class Main {
                 DrawingFrame.guessNumber = 0;
                 row = 0;
                 column = 0;
-                letters_On_Row = 0;
-                total_Letters_Added = 0;
+                lettersOnRow = 0;
+                totalLettersAdded = 0;
                 DrawingFrame.update_drawingFrame();
-                App.start_mainFrame_First = false;
-                App.class_is_mainframe = true;
+                App.startMainFrameFirst = false;
+                App.classIsMainframe = true;
                 SwingUtilities.invokeLater(new App());
 
             }
@@ -167,29 +167,29 @@ class Main {
         }
     }
     JLabel place_Label(){
-        int letters_Per_Row = rowCalc();
+        int lettersPerRow = rowCalc();
         String char_Caps;
-        for(letter_At_Index = 0; letter_At_Index < alphabet.length; letter_At_Index++) {
+        for(letterAtIndex = 0; letterAtIndex < ALPHABET.length; letterAtIndex++) {
             char_Caps = char2.toUpperCase();
 
-            if (char_Caps.equals(alphabet[letter_At_Index])) {
-                if (letters_On_Row == letters_Per_Row) {
+            if (char_Caps.equals(ALPHABET[letterAtIndex])) {
+                if (lettersOnRow == lettersPerRow) {
                     row++;
-                    letters_On_Row = 0;
+                    lettersOnRow = 0;
                     column = 0;
                 }
-                letter = alphabet[letter_At_Index];
+                letter = ALPHABET[letterAtIndex];
                 guessLabel = new JLabel(letter);
                 layout.putConstraint(SpringLayout.WEST, guessLabel, (column * 20 + 20), SpringLayout.WEST, contentpane);
                 layout.putConstraint(SpringLayout.NORTH, guessLabel, (row * 20 + 70), SpringLayout.NORTH, contentpane);
-                if (column == letters_Per_Row) {
+                if (column == lettersPerRow) {
                     column = 0;
                 } else {
                     column++;
                 }
 
-                letters_On_Row++;
-                total_Letters_Added++;
+                lettersOnRow++;
+                totalLettersAdded++;
                 return (guessLabel);
             }
         }

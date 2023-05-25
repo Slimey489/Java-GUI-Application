@@ -3,13 +3,13 @@ import javax.swing.*;
 class App implements Runnable {
     public static JFrame gui;
 
-    static boolean start_mainFrame_First;
-    static boolean class_is_mainframe;
+    static boolean startMainFrameFirst;
+    static boolean classIsMainframe;
 
     public void run() {
-        start_mainFrame_First = false;
+        startMainFrameFirst = false;
         Main.callingclass = Main.findCallingClass();
-        if (start_mainFrame_First) {
+        if (startMainFrameFirst) {
             Main classinstance = new Main();
             gui = classinstance.GuessFrame();
         }
@@ -18,7 +18,7 @@ class App implements Runnable {
             gui = classinstance.wordFrame();
         }
         gui.setVisible(true);
-        if (class_is_mainframe){
+        if (classIsMainframe){
             System.out.println(Main.callingclass);
             Main.frameMain.dispose();
         }

@@ -16,7 +16,7 @@ class WordFrame extends JFrame {
     Container contentpane2;
     public String word;
     String[] wordArray;
-    public ArrayList<String> arrayWord;
+    public static ArrayList<String> arrayWord;
 
 
     public JFrame wordFrame() {
@@ -68,8 +68,8 @@ class WordFrame extends JFrame {
                 wordArray = wordLowerCase.split("");
 
                 arrayWord = new ArrayList<>(Arrays.asList(wordArray));
-                Main classinstance = new Main();
-                classinstance.GuessFrame();
+                Main classInstance = new Main();
+                classInstance.GuessFrame();
             }
         }
     }

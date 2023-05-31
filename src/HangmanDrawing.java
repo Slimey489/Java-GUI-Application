@@ -6,6 +6,7 @@ import java.awt.geom.Rectangle2D;
 
 
 class HangmanDrawing {
+    public static boolean outOfGuesses;
 
     static class Canvas extends JPanel{
         @Override
@@ -186,6 +187,7 @@ class HangmanDrawing {
                 }
                 default -> {
                     ErrorFrame.error = "You are out of guesses";
+                    outOfGuesses = true;
                     SwingUtilities.invokeLater(new ErrorHandler());
                 }
             }

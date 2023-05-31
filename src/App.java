@@ -11,7 +11,7 @@ class App implements Runnable {
         Main.callingclass = Main.findCallingClass();
         if (startMainFrameFirst) {
             Main classinstance = new Main();
-            gui = classinstance.GuessFrame();
+            gui = classinstance.guessFrame();
         }
         else {
             WordFrame classinstance = new WordFrame();

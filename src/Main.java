@@ -49,7 +49,8 @@ class Main {
     int row;
     public static int totalLettersAdded;
     boolean removedConstraints = false;
-    ArrayList<String> underscoreWord;
+
+
 
 
 
@@ -68,14 +69,11 @@ class Main {
 
     }
     /** @noinspection UnusedReturnValue*/
-    public JFrame GuessFrame(){
+    public JFrame guessFrame(){
         frameMain = new JFrame();
         frameMain.setTitle("Hangman");
         contentpane = frameMain.getContentPane();
         layout = new SpringLayout();
-        underscoreWord = new ArrayList<>();
-        underscoreWord.add("_");
-        underscoreWord.add("_");
         guessField = new JTextField(1);
         backButton = new JButton("New Word");
         guessField.addActionListener(new action());

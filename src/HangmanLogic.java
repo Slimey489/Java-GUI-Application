@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ListIterator;
 
-public class Hangman_Logic {
+public class HangmanLogic {
     String guessInput;
     public ArrayList<String> underscoreWord;
     private ArrayList<Integer> indexesOfGuesses;

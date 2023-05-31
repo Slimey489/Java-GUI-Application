@@ -15,8 +15,7 @@ class WordFrame extends JFrame {
     SpringLayout layout2;
     Container contentpane2;
     public String word;
-    String[] wordArray;
-    public static ArrayList<String> arrayWord;
+    static String[] wordArray;
 
 
     public JFrame wordFrame() {
@@ -67,9 +66,9 @@ class WordFrame extends JFrame {
                 wordLowerCase = word.toLowerCase(Locale.ROOT);
                 wordArray = wordLowerCase.split("");
 
-                arrayWord = new ArrayList<>(Arrays.asList(wordArray));
+
                 Main classInstance = new Main();
-                classInstance.GuessFrame();
+                classInstance.guessFrame();
             }
         }
     }
